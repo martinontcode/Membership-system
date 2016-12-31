@@ -1,0 +1,131 @@
+a{
+    color: #713194;
+}
+.navbar-default .navbar-brand{
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.05rem;
+}
+
+/* Index */ 
+.descText{
+    word-spacing: 0.08rem;
+    letter-spacing: 0.01rem;
+    color: #59595c;
+    max-width: 500px;
+    font-size: 1.7rem;
+    line-height: 1.75em;
+}
+.description{
+    margin-top: 10%;
+}
+
+/* Login form */
+
+.cnt{
+    text-align: center;
+}
+.gray a{
+    color: graytext;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-bottom: 20px; 
+}
+.form-login {
+  max-width: 330px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top:10%;
+  border: 3px dashed;
+  border-color: #e7e7e7;
+  background-color: #F8F8F8 ;
+}
+.form-login .form-login-heading,
+.form-login .checkbox {
+  margin-bottom: 10px;
+}
+.form-login .checkbox {
+  font-weight: normal;
+}
+.form-login .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-login .form-control:focus {
+  z-index: 2;
+}
+.form-login input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-login input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.colorgraph {
+  height: 7px;
+  border-top: 0;
+  background: #c4e17f;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #662f75, #662f75 12.5%, #692f7d 12.5%, #692f7d 25%, #6c3084 25%, #6c3084 37.5%, #713194 37.5%, #713194 50%, #7d33b3 50%, #7d33b3 62.5%, #8234c3 62.5%, #8234c3 75%, #8535ca 75%, #8535ca 87.5%, #8835d2 87.5%, #8835d2);
+  background-image: -moz-linear-gradient(left, #662f75, #662f75 12.5%, #692f7d 12.5%, #692f7d 25%, #6c3084 25%, #6c3084 37.5%, #713194 37.5%, #713194 50%, #7d33b3 50%, #7d33b3 62.5%, #8234c3 62.5%, #8234c3 75%, #8535ca 75%, #8535ca 87.5%, #8835d2 87.5%, #8835d2);
+  background-image: -o-linear-gradient(left, #662f75, #662f75 12.5%, #692f7d 12.5%, #692f7d 25%, #6c3084 25%, #6c3084 37.5%, #713194 37.5%, #713194 50%, #7d33b3 50%, #7d33b3 62.5%, #8234c3 62.5%, #8234c3 75%, #8535ca 75%, #8535ca 87.5%, #8835d2 87.5%, #8835d2);
+  background-image: linear-gradient(to right, #662f75, #662f75 12.5%, #692f7d 12.5%, #692f7d 25%, #6c3084 25%, #6c3084 37.5%, #713194 37.5%, #713194 50%, #7d33b3 50%, #7d33b3 62.5%, #8234c3 62.5%, #8234c3 75%, #8535ca 75%, #8535ca 87.5%, #8835d2 87.5%, #8835d2);
+}
+.btn{
+  border: 1px solid;
+  border-color: #e7e7e7;
+  background-color: #713194;
+  color: #fff;
+}
+/* /Login-form */
+
+/* Registration form */
+
+.form-registration {
+  max-width: 350px;
+  margin: 0 auto;
+  margin-top:10%;
+  border: 3px dashed;
+  border-color: #e7e7e7;
+  background-color: #F8F8F8 ;
+  padding: 20px;
+}
+.form-registration .form-registration-heading,
+.form-registration .checkbox {
+  margin-bottom: 10px;
+}
+.form-registration .checkbox {
+  font-weight: normal;
+}
+.form-registration .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-registration .form-control:focus {
+  z-index: 2;
+}
+.form-registration input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-registration input[type="password"] {
+  margin-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* /Registration form */
