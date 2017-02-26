@@ -67,6 +67,13 @@ class Registration{
                     /* Check if username or email is already taken */
                     $checkavailable = "SELECT * FROM `users` WHERE username = '$username' OR email = '$email' "; // Query to cross check Company name with database.
                     $result = mysqli_query($conn, $checkavailable);
+                    
+                    /* If email is in the correct format */
+                    if(!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^", $email)){
+    			header('Location: registration.php');
+                        $_SESSION['errorMessage'] = 6;
+                        exit();
+		            }
 
                     /* If username or email is taken */
                     if ($result->num_rows != 0) {
