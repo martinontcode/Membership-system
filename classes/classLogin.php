@@ -14,6 +14,10 @@ class Login{
         if (isset($_POST["login"])) {
             $this->validateLogIn();
         }     
+        /* If forgot password form data is posted call forgotPassword() function. */
+        if (isset($_POST["forgot"])) {
+            $this->forgotPassword();
+        }    
                        
     } /* End __construct() */
     
@@ -88,6 +92,32 @@ class Login{
         header('Location: index.php');
         
     } /* End logOut() */   
+    
+    /* function forgotPassword()
+     * Reset password when forgotten.
+     */
+    private function forgotPassword(){
+        $email = trim($_POST['email']);
+        
+        // Require credentials for DB connection. 
+        require ('config/dbconnect.php');
+        
+        // Check if username or email is already taken.
+        $stmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        
+        if ($result->num_rows != 0) {
+            $forgot_password_key = password_hash($email, PASSWORD_DEFAULT);
+            $stmt = $conn->prepare("UPDATE users SET fpassword_key = ? WHERE email = ?");
+            $stmt->bind_param("ss", $forgot_password_key, $email);
+            $stmt->execute();
+            $stmt->close();
+        }
+        
+    }
     
     
 } /* End class Login */
