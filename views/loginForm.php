@@ -10,19 +10,24 @@ include_once 'header.php';
             <h3 class="cnt">Welcome back!</h3>
             <hr class="colorgraph">
             
+            <label for="username">Username:</label>
             <input type="text" name="username" id="username" placeholder="Username" class="input form-control" autocomplete="off" required autofocus>
+            <label for="password">Password:</label>
             <input type="password" name="password" id="password" placeholder="Password" class="input form-control" autocomplete="off" required><br>
+            
+            <!-- If there is an error it will be shown. --> 
+            <?php if(!empty($_SESSION['message'])): ?>
+                <div class="alert alert-danger alert-container" id="alert">
+                    <strong><center><?php echo htmlentities($_SESSION['message']) ?></center></strong>
+                    <?php unset($_SESSION['message']); ?>
+                </div>
+            <?php endif; ?>
             
             <input type="submit"  name="login" value="Sign In" class="btn btn-lg btn-block submit" /> 
             
         </form>
         
-        <!-- This error will be shown to user if wrong username or password is provided -->    
-        <?php if(!empty(@$_SESSION['errorMessage'] == 1)): ?>
-            <div class="alert alert-danger">
-                <strong><center>Username or password is incorrect!</center></strong>
-            </div>
-        <?php endif; ?>
+        
         
     </div>  <!-- End loginForm-->
  
