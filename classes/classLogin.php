@@ -145,8 +145,8 @@ class Login{
      * Otherwise prompt an error.
      */
     public function newPassword(){
-        $email = $_GET['email'];
-        $forgot_password_key = $_GET['key'];
+        $email = htmlentities($_GET['email']);
+        $forgot_password_key = htmlentities($_GET['key']);
         
         // Require credentials for DB connection. 
         require ('config/dbconnect.php');
