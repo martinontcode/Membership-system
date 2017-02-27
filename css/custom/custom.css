@@ -93,7 +93,7 @@ h1, .h1, h2, .h2, h3, .h3 {
   background-color: #713194;
   color: #fff;
 }
-/* /Login-form */
+/* End Login-form */
 
 /* Registration form */
 
@@ -136,4 +136,17 @@ h1, .h1, h2, .h2, h3, .h3 {
   border-top-right-radius: 0;
 }
 
-/* /Registration form */
+/* End Registration form */
+
+
+/* Forgot password form */
+.form-forgot{
+    max-width: 350px;
+    margin: 0 auto;
+    margin-top:10%;
+    border: 3px dashed;
+    border-color: #e7e7e7;
+    background-color: #F8F8F8 ;
+    padding: 20px;
+}
+/* End Forgot password form */
