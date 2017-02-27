@@ -18,6 +18,9 @@ a{
 .description{
     margin-top: 10%;
 }
+.red{
+    color: #FF2A00;
+}
 
 /* Login form */
 
@@ -29,6 +32,11 @@ a{
 }
 h1, .h1, h2, .h2, h3, .h3 {
     margin-bottom: 20px; 
+}
+.nobold{
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 .form-login {
   max-width: 330px;
