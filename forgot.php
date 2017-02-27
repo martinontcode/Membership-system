@@ -1,3 +1,12 @@
+<?php if(!isset($_SESSION)) { session_start();} 
+
+/* Require UserClass.php to call registration function */
+require("classes/classLogin.php");
+
+/* Call for class constructor */
+$pswReset = new Login();
+?>
+
 <?php include_once 'header.php'; ?>
 
 <div class="container">
