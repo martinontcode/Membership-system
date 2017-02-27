@@ -26,35 +26,37 @@ class Login{
     /* Require credentials for DB connection. */
     require ('config/dbconnect.php');
         
-    /* Check that data has been submited through login form */
+
     if(isset($_POST['login'])){
 
-        /* User input variables converted to string to prevent SQL injections */
+
         $user = mysqli_real_escape_string($conn,trim($_POST['username']));
         $userpsw = mysqli_real_escape_string($conn,trim($_POST['password']));
+        
+        
 
 
         /* Check that both fields are filled with values */
         if(!empty($user) && !empty($userpsw)){
 
-            /* Query the username from DB, if response is greater than 0 it means that users exists & 
-             * we continue to compare the password hash provided by the user side with the DB data. */
-            
             
             $sql = "SELECT * FROM `users` WHERE username = '$user'";
+        
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows === 1) {
                 
                 $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-                if (password_verify($userpsw, $row['password'])) {      // Example of password hash : $4x$80$Vcl0Wxr5DNeIg.Y52YiVOOePENcjQPJ88mrEacKP15S9kIhx.u6gy
-                    $_SESSION['user_id'] = $user;                       // Username is set as Session user_id for this user.
+                if (password_verify($userpsw, $row['password']) && $row['active'] == 1)  {
+                    $_SESSION['user_id'] = $user;                    
+                } elseif ($row['active'] == 0) {
+                    $_SESSION['errorMessage'] = 7;
                 } else {
                     $_SESSION['errorMessage'] = 1;
-                }   /* /EndIF */
+                } 
                 
-            }   /* /EndIF */
+            }
             
-        }   /* /EndIF */
+        }
         } else {
             echo 'Please fill all fields.'; // Prompt user to fill all fields.
         }   /* /EndIF */
@@ -91,5 +93,4 @@ class Login{
     
     
 } /* End class Login */
-
 
