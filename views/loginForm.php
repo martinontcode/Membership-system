@@ -13,7 +13,8 @@ include_once 'header.php';
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" placeholder="Username" class="input form-control" autocomplete="off" required autofocus>
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Password" class="input form-control" autocomplete="off" required><br>
+            <input type="password" name="password" id="password" placeholder="Password" class="input form-control" autocomplete="off" required>
+            <a href="forgot.php">Forgot your password?</a><br><br>
             
             <!-- If there is an error it will be shown. --> 
             <?php if(!empty($_SESSION['message'])): ?>
