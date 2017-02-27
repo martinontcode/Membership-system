@@ -11,9 +11,8 @@ $pswReset = new Login();
 
 <div class="container">
 
-    <!-- Login form -->
-    <div class="loginForm">
-        <form  action="forgot.php" name="forgotpsw" class="form-forgot" method="post">
+    <div class="forgotpassword-Form">
+        <form action="forgot.php" name="forgotpassword-Form" class="form-forgot" method="post">
             <h3 class="cnt">Forgot your password?</h3>
             <hr class="colorgraph">
             
@@ -29,13 +28,18 @@ $pswReset = new Login();
                     <?php unset($_SESSION['message']); ?>
                 </div>
             <?php endif; ?>
+            <!-- If e-mail has been sent. -->
+            <?php if(!empty($_SESSION['SuccessMessage'])): ?>
+                <div class="alert alert-success alert-container" id="alert">
+                    <strong><center><?php echo htmlentities($_SESSION['SuccessMessage']) ?></center></strong>
+                    <?php unset($_SESSION['SuccessMessage']); ?>
+                </div>
+            <?php endif; ?>
             
-            <input type="submit"  name="forgot" value="Send e-mail" class="btn btn-lg btn-block submit" /> 
+            <input type="submit"  name="forgotPassword" value="Send e-mail" class="btn btn-lg btn-block submit" /> 
             
         </form>
 
-
-
-    </div>  <!-- End loginForm-->
+    </div>
 
 </div>  
