@@ -9,10 +9,13 @@ include_once 'header.php';
         <form  action="registration.php" name="registrationform" class="form-registration" method="post">
             <h3 class="cnt">Sign up!</h3>
             <hr class="colorgraph">
-            
-            <input type="text" name="username" id="username" placeholder="Username" class="input form-control" autocomplete="off" required autofocus><br>
+            <label for="username">Username<span class="red">*</span>:</label>
+            <input type="text" name="username" id="username" placeholder="Username" class="input form-control" autocomplete="off" required autofocus>
+            <label for="email">E-mail<span class="red">*</span>:</label>
             <input type="email" name="email" id="email" placeholder="Email" class="input form-control" autocomplete="off" required><br>
+            <label for="password">Password<span class="red">*</span>:</label>
             <input type="password" name="password" id="password" placeholder="Password" class="input form-control" autocomplete="off" required>
+            <label for="password2">Re-enter password<span class="red">*</span>:</label>
             <input type="password" name="password2" id="password2" placeholder="Re-enter password" class="input form-control" autocomplete="off" required><br>
             
             <!-- If there is an error it will be shown. --> 
