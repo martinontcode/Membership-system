@@ -8,9 +8,9 @@ http://membership.martincodes.com
   * ~~Index page~~
   * ~~Live demo webpage~~
   * ~~MySQL script for db and table~~
+  * ~~"Forgot password" function for user~~
   
 ## ToDO: 
-  * "Forgot password" function for user
   * User activation mail  
   * Refactor code
   
