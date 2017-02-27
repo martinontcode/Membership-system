@@ -1,6 +1,6 @@
 <?php
+include_once 'header.php';
 /* Include header */
-include_once 'views/header.php';
 ?>
 <body>
     <div id="content" class="container-fluid background">
@@ -13,7 +13,7 @@ include_once 'views/header.php';
                 <br><br>
 
                 <!-- Remove this to remove the GitHub URL link -->
-                <a href="https://github.com/MartinoEst/PHP-Membership-System">Check out this code at GitHub</a><br>
+                <a href="https://github.com/MartinoEst/Membership-system">Check out this code at GitHub</a><br>
 
                 <!-- Back to main page -->  
                 <a href="http://martincodes.com/">Back to main page</a>

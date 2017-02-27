@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Full membership system</title>
-    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    
+    <meta name="description" content="Membership system written in PHP, includes registration form, login form.">
+    <meta name="keywords" content="PHP, Membership, registration, login, form">
+    <meta name="author" content="Martin Onton">
+
     <!-- Include Bootstrap .css -->
     <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
     <!-- Bootstrap -->

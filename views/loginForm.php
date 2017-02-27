@@ -1,6 +1,6 @@
 <?php
+include_once 'header.php';
 /* Include header */
-include_once 'views/header.php';
 ?>
 <div class="container">
 
