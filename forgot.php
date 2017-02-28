@@ -1,16 +1,18 @@
 <?php if(!isset($_SESSION)) { session_start();} 
 
 /* Require UserClass.php to call registration function */
-require("classes/classLogin.php");
+require("classes/UserClass.php");
 
-/* Call for class constructor */
-$pswReset = new Login();
+// Call for class constructor.
+$passwordReset = new UserClass();
+
 ?>
 
 <?php include_once 'header.php'; ?>
 
 <div class="container">
 
+    <!-- Forgot password form -->
     <div class="forgotpassword-Form">
         <form action="forgot.php" name="forgotpassword-Form" class="form-forgot" method="post">
             <h3 class="cnt">Forgot your password?</h3>
@@ -40,6 +42,6 @@ $pswReset = new Login();
             
         </form>
 
-    </div>
-
+    </div>  <!-- End Forgot password Form-->
+    
 </div>  

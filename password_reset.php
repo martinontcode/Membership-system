@@ -1,11 +1,11 @@
 <?php if(!isset($_SESSION)) { session_start();} 
 
 /* Require UserClass.php to call registration function */
-require("classes/classLogin.php");
+require("classes/UserClass.php");
 
 /* Call for class constructor */
-$pswReset = new Login();
-$pswReset->newPassword();
+$passwordReset = new UserClass();
+$passwordReset->newPassword();
 ?>
 <!-- If there is an error it will be shown. --> 
 <?php if(!empty($_SESSION['message'])): ?>

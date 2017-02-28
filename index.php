@@ -14,10 +14,10 @@ if(!isset($_SESSION)) { session_start();}
    
 
 /* Require login.php to call login function */
-require("classes/classLogin.php");
+require("classes/UserClass.php");
 
 /* Call for login function */
-$login = new Login();
+$login = new UserClass();
   
 if($login->isLoggedIn() == true){
   include("views/loginTrue.php");

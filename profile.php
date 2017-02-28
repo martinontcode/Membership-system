@@ -3,10 +3,10 @@ if(!isset($_SESSION)) { session_start();}
 /* Start session, this is necessary, it must be the first thing in the PHP document after <?php syntax ! */ 
 
 /* Require login.php to call login function */
-require("classes/classLogin.php");
+require("classes/UserClass.php");
 
 /* Call for login function */
-$login = new Login();
+$login = new UserClass();
 
 if($login->isLoggedIn() == true){
   include("views/accountSettings.php");   // Else prompt login form

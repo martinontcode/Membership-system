@@ -2,10 +2,10 @@
 
 <?php 
     /* Require login.php to call login function */
-    require("classes/ClassRegistration.php");
+    require("classes/UserClass.php");
 
     /* Call for login function */
-    $verify = new Registration();
+    $verify = new UserClass();
     
     $verify->Verify();
 ?> 
