@@ -127,7 +127,7 @@ class Login{
             $message = "Your reset key is: ".$forgot_password_key."";
             $to= $email;
             $subject="Reset password";
-            $from = 'test@test.com'; // Insert the e-mail where you want to send the emails from.
+            $from = 'test@membership.com'; // Insert the e-mail where you want to send the emails from.
             $body='<a href="YOURWEBSITEURL/password_reset.php?email='.$email.'&key='.$forgot_password_key.'">password_reset.php?email='.$email.'&key='.$forgot_password_key.'</a>'; // Replace YOURWEBSITEURL with your own URL for the link to work.
             $headers = "From: " .$from. "\r\n";
             $headers .= "Reply-To: ". $from . "\r\n";
@@ -145,8 +145,8 @@ class Login{
      * Otherwise prompt an error.
      */
     public function newPassword(){
-        $email = htmlentities($_GET['email']);
-        $forgot_password_key = htmlentities($_GET['key']);
+        $email = htmlspecialchars($_GET['email']);
+        $forgot_password_key = htmlspecialchars($_GET['key']);
         
         // Require credentials for DB connection. 
         require ('config/dbconnect.php');
