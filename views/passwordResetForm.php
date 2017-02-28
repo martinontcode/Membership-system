@@ -7,7 +7,7 @@
         <form  action="forgot.php" name="forgotpassword-Form" class="form-forgot" method="post">
             <h3 class="cnt">Insert new password.</h3>
             <hr class="colorgraph">
-            <label for="password3">Re-enter password<span class="red">*</span>:</label>
+            <label for="password3">New password<span class="red">*</span>:</label>
             <input type="password" name="password3" id="password3" placeholder="Re-enter password" class="input form-control" autocomplete="off" required>
             <label for="password2">Re-enter password<span class="red">*</span>:</label>
             <input type="password" name="password2" id="password2" placeholder="Re-enter password" class="input form-control" autocomplete="off" required><br>
