@@ -60,10 +60,25 @@ class Registration{
                         exit();
                     } else {
                         // Insert data into database
-                        $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?,?,?)");
-                        $stmt->bind_param("sss", $username, $email, $securing);
+                        $code = substr(md5(mt_rand()),0,15);
+                        $stmt = $conn->prepare("INSERT INTO users (username, email, password, activation_code) VALUES (?,?,?,?)");
+                        $stmt->bind_param("ssss", $username, $email, $securing, $code);
                         $stmt->execute();
                         $stmt->close();
+                        
+                        // Send user activation e-mail
+                        
+                        $message = "Your activation code is: ".$code.".";
+                        $to= $email;
+                        $subject="Your activation code for Membership.";
+                        $from = 'test@membership.com';  // This should be changed to an email that you would like to send activation e-mail from.
+                        $body='Your activation code is: '.$code.'<br> To activate your account please click on the following link'
+                                . ' <a href="http://localhost/Membership/verify.php?id='.$email.'&code='.$code.'">verify.php?id='.$email.'&code='.$code.'</a>.';
+                        $headers = "From: " .$from. "\r\n";
+                        $headers .= "Reply-To: ". $from . "\r\n";
+                        $headers .= "MIME-Version: 1.0\r\n";
+                        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                        mail($to,$subject,$body,$headers);
 
                         // If registration is successful return user to registration.php and promt user success pop-up.
                         header('Location: registration.php');
@@ -84,6 +99,38 @@ class Registration{
             }
         
     }   /* End createUser() */
+    
+    
+    /* Function Verify(){
+    *  Check if user has verified his/her email.
+    */
+    public function Verify(){
+        if(isset($_GET['id']) && isset($_GET['code']))
+        {
+            $user_email=$_GET['id'];
+            $activation_code=$_GET['code'];
+            
+            /* Require credentials for DB connection. */
+            require ('config/dbconnect.php');
+
+            $stmt = $conn->prepare("SELECT email FROM users WHERE email = ? and activation_code = ?");
+            $stmt->bind_param("ss", $user_email, $activation_code);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close(); 
+            if($result->num_rows == 1)
+            {
+                $stmt = $conn->prepare("UPDATE users SET is_activated = ? WHERE email = ? and activation_code = ?");
+                $verified = 1;
+                $stmt->bind_param("iss", $verified, $user_email, $activation_code);
+                $stmt->execute();
+                $stmt->close();
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+    }   /* End Verify() */
 
 } /* End class Registration */
 
