@@ -107,8 +107,8 @@ class Registration{
     public function Verify(){
         if(isset($_GET['id']) && isset($_GET['code']))
         {
-            $user_email=$_GET['id'];
-            $activation_code=$_GET['code'];
+            $user_email=htmlspecialchars($_GET['id']);
+            $activation_code=htmlspecialchars($_GET['code']);
             
             /* Require credentials for DB connection. */
             require ('config/dbconnect.php');
