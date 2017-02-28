@@ -140,6 +140,8 @@ class UserClass{
             $stmt->execute();
             $stmt->close();
             
+            $_SESSION['SuccessMessage'] = 'User has been created!';
+            
             $message = "Your reset key is: ".$forgot_password_key."";
             $to= $email;
             $subject="Reset password";
@@ -150,6 +152,7 @@ class UserClass{
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             mail($to,$subject,$body,$headers);
+
         }
  
     } /* End forgotPassword() */
@@ -279,7 +282,7 @@ class UserClass{
                         $subject="Your activation code for Membership.";
                         $from = 'test@membership.com';  // This should be changed to an email that you would like to send activation e-mail from.
                         $body='Your activation code is: '.$code.'<br> To activate your account please click on the following link'
-                                . ' <a href="THISSHOULDINCLUDETHEURLOFYOURPAGE/verify.php?id='.$email.'&code='.$code.'">verify.php?id='.$email.'&code='.$code.'</a>.'; // Input the URL of your website.
+                                . ' <a href="YOURWEBSITEURL/verify.php?id='.$email.'&code='.$code.'">verify.php?id='.$email.'&code='.$code.'</a>.'; // Input the URL of your website.
                         $headers = "From: " .$from. "\r\n";
                         $headers .= "Reply-To: ". $from . "\r\n";
                         $headers .= "MIME-Version: 1.0\r\n";
