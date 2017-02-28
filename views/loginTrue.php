@@ -1,7 +1,5 @@
-<?php
-include_once 'header.php';
-/* Include header */
-?>
+<?php include_once 'header.php'; ?>
+
 <div id="content" class="container-fluid background">
     <div class="container description">
         <a name="about"></a><h2><center>Logged In</center></h2>          

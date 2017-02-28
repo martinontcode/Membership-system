@@ -1,4 +1,5 @@
 <?php include_once 'header.php'; ?>
+
 <div class="container">
 
     <!-- Forgot password form -->
@@ -17,4 +18,5 @@
         
         </form>
         
-</div>  <!-- End Forgot password form-->
+    </div>  <!-- End Forgot password form-->
+</div> 

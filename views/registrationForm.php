@@ -1,7 +1,5 @@
-<?php
-include_once 'header.php';
-/* Include header */
-?>
+<?php include_once 'header.php'; ?>
+
 <div class="container">
 
     <!-- Registration form -->

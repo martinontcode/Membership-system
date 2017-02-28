@@ -1,7 +1,5 @@
-<?php
-include_once 'header.php';
-/* Include header */
-?>
+<?php include_once 'header.php'; ?>
+
 <div class="container">
 
     <!-- Login form -->
@@ -27,10 +25,8 @@ include_once 'header.php';
             <input type="submit"  name="login" value="Sign In" class="btn btn-lg btn-block submit" /> 
             
         </form>
-        
-        
-        
-    </div>  <!-- End loginForm-->
+
+    </div>  <!-- End Login Form-->
  
 <!-- URL to registration form -->
 <div class="cnt"><a href="registration.php">Dont have an account? Create one</a></div>
