@@ -1,0 +1,7 @@
+In home PC, downloaded the files by zip from 
+https://github.com/alwong2000/Membership-system
+and stored into my PC for modification.
+Created scsl.ueuo.com ac for testing:
+Created mariadb database & create tables, run some sql scripts
+ uploading the modified files php scripts and tested.
+Downloaded also filezilla for easier ftp but showed disk full (may be buffer full due to ftp quota)
