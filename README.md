@@ -1,7 +1,7 @@
 # PHP-Membership-System
 A membership system written in PHP. It will include up to date password salting, secure validation, MySQL injection protection and beatiful design.
 ## Live demo
-http://membership.martincodes.com
+~~http://membership.martincodes.com~~ DEPRECATED
 ## What is done at the moment ?
   * ~~Login system~~
   * ~~Registration system~~
